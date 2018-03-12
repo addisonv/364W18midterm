@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+<form action="{{ url_for('event_search') }}" method="POST">
+    {{ form.search.label() }}{{ form.search() }}<br><br>
+    {{ form.radio.label() }}{{ form.radio() }}
+    {{ form.radius.label() }}{{ form.radius() }}<br><br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+<div>
+    {% if len_event_results > 0 %}
+        <h2> Event Results: </h2>
+        <p>
+            {% for x in event_results %}
+                {% for y in event_results[x] %}
+                	{{ y }}<br>
+                {% endfor %}
+                <br>
+            {% endfor %}
+        </p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+<h1> Event types </h1>
+<p>
+	{% for x in types %}
+		{{ x.event_type }}<br>
+	{% endfor %}
+</p>
+<h1>All Events</h1>
+<p>
+	{% for x in events %}
+		{{ x.title }}<br>
+	{% endfor %}
+</p>
+<h1>Random Data</h1>
+<p>
+	{% for x in data %}
+
+		{{ x.entry1 }}<br>
+		{{ x.entry2 }}<br>
+		{{ x.entry3 }}<br><br>
+	{% endfor %}
+</p>
+
+{% endblock %}

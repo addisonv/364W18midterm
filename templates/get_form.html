@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+
+<form action="{{ url_for('get_form') }}" method="GET">
+	{{ form.enter1.label() }}{{ form.enter1() }}<br>
+	{{ form.enter2.label() }}{{ form.enter2() }}<br>
+    {{ form.enter3.label() }}{{ form.enter3() }}<br><br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+
+{% endblock %}

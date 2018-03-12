@@ -1,0 +1,28 @@
+
+
+{% block content1 %}
+
+<form action="{{ url_for('home') }}" method="POST">
+    {{ form.name.label() }}{{ form.name() }}<br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+{% endblock %}
+
+<div>
+{% for message in get_flashed_messages() %}
+    <strong>{{ message }}</strong>
+{% endfor %}
+</div>
+
+<h3>----Navigation----</h3>
+<ul>
+    <li><a href="{{ url_for('home')}}">Go Home</a></li>
+    <li><a href="{{ url_for('event_search')}}">Go To Event Search</a></li>
+    <li><a href="{{ url_for('all_names')}}">View All Names</a></li>
+    <li><a href="{{ url_for('view_db_info')}}">View Database Information</a></li>
+    <li><a href="{{ url_for('get_form')}}">Get Form</a></li>
+
+
+</ul>
